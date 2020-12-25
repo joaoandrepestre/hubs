@@ -456,5 +456,8 @@
   "support.copied": "copied!",
   "support.details": "details",
   "support.supported": "supported",
-  "support.unsupported": "unsupported"
+  "support.unsupported": "unsupported",
+  "age-restriction.title": "Are you over 18?",
+  "age-restriction.body": "This website requires you to be over 18 years old to enter.",
+  "age-restriction.button": "Yes, I am"
 }

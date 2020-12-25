@@ -1,0 +1,10 @@
+@import 'shared';
+
+:local(.modal) {
+    color: var(--panel-text-color);
+    background-color: var(--panel-background-color);
+}
+
+:local(.modal_button) {
+    @extend %bottom-action-button;
+}

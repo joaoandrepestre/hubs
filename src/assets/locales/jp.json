@@ -456,5 +456,8 @@
   "support.copied": "コピーされました！",
   "support.details": "詳細",
   "support.supported": "supported",
-  "support.unsupported": "サポートされていません"
+  "support.unsupported": "サポートされていません",
+  "age-restriction.title": "Are you over 18?",
+  "age-restriction.body": "This website requires you to be over 18 years old to enter.",
+  "age-restriction.button": "Yes, I am"
 }
