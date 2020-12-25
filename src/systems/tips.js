@@ -319,7 +319,8 @@ const VALIDATORS = {
     return scene.is("sharing_video") ? VALID : INVALID;
   },
   mute_mode: function(userinput, scene) {
-    return scene.is("muted") ? VALID : INVALID;
+    //return scene.is("muted") ? VALID : INVALID;
+    return INVALID;
   },
   feedback: function(/*userinput, scene, mediaCounter, store*/) {
     /*if (configs.feature("show_feedback_ui") && store && store.state.activity.entryCount >= NUM_ENTRIES_FOR_FEEDBACK_TIP)

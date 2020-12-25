@@ -558,16 +558,22 @@ class UIRoot extends Component {
   performDirectEntryFlow = async enterInVR => {
     this.setState({ enterInVR, waitingOnAudio: true });
 
-    const hasGrantedMic = (await grantedMicLabels()).length > 0;
+    //const hasGrantedMic = (await grantedMicLabels()).length > 0;
+    // set granted mic to constant false
+    const hasGrantedMic = false;
 
     if (hasGrantedMic) {
       await this.setMediaStreamToDefault();
       this.beginOrSkipAudioSetup();
     } else {
-      this.pushHistoryState("entry_step", "mic_grant");
+      //this.pushHistoryState("entry_step", "mic_grant");
+      // push history to skip mic permission request
+      this.pushHistoryState("entry_step", "audio");
     }
 
     this.setState({ waitingOnAudio: false });
+    // press audio ready button to enter room directly
+    await this.onAudioReadyButton();
   };
 
   enter2D = async () => {
@@ -778,7 +784,7 @@ class UIRoot extends Component {
     // Push the new history state before going into VR, otherwise menu button will take us back
     clearHistoryState(this.props.history);
 
-    const muteOnEntry = this.props.store.state.preferences["muteMicOnEntry"] || false;
+    const muteOnEntry = this.props.store.state.preferences["muteMicOnEntry"] || true;
     await this.props.enterScene(this.state.mediaStream, this.state.enterInVR, muteOnEntry);
 
     this.setState({ entered: true, entering: false, showShareDialog: false });
@@ -1292,7 +1298,7 @@ class UIRoot extends Component {
 
   renderAudioSetupPanel = () => {
     const subtitleId = isMobilePhoneOrVR ? "audio.subtitle-mobile" : "audio.subtitle-desktop";
-    const muteOnEntry = this.props.store.state.preferences["muteMicOnEntry"] || false;
+    const muteOnEntry = this.props.store.state.preferences["muteMicOnEntry"] || true;
     return (
       <div className="audio-setup-panel">
         <div
