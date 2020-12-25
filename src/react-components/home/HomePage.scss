@@ -24,7 +24,6 @@
   margin-bottom: 1em;
 
   @media (min-width: $breakpoint-lg) {
-    font-size: 18pt;
     align-self: flex-start;
     text-align: start;
   }
@@ -59,7 +58,7 @@
 
 :local(.featured-rooms) {
   width: 100%;
-  background-color: var(--home-media-panel-background-color);
+  //background-color: var(--home-media-panel-background-color);
 }
 
 :local(.secondary-links) {

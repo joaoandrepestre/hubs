@@ -30,7 +30,7 @@ export function RoomTile({ room, ...rest }) {
         <img src={thumbnailUrl} alt={room.name} width={thumbnailWidth} height={thumbnailHeight} />
         {room.favorited && <FontAwesomeIcon className={styles.favoriteIcon} icon={faStar} />}
         <div className={styles.memberCount}>
-          <FontAwesomeIcon icon={faUsers} /> <span>{room.member_count}</span>
+          <FontAwesomeIcon icon={faUsers} /> <span>{room.member_count}/{room.room_size}</span>
         </div>
       </div>
       <div className={styles.roomInfo}>

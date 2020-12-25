@@ -68,6 +68,22 @@ export function HomePage() {
               <FormattedMessage id="app-description" />
             </div>
           )}
+          <div className={styles.appDescription}>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tellus ipsum, dignissim vel luctus at,
+              feugiat quis nulla. Praesent mollis purus tortor, at aliquet velit elementum id. Proin ac mauris elit. In
+              pharetra orci augue, sed sagittis leo aliquet eget. Mauris condimentum massa ex, ornare pellentesque magna
+              scelerisque ultricies. Duis risus nulla, efficitur et eros at, viverra consequat justo. Nunc ut enim
+              laoreet, accumsan dolor sit amet, posuere nisi. Nam venenatis ipsum nec lectus vulputate ullamcorper.
+            </p>
+            <p>
+              tincidunt erat mi, in pharetra massa ornare et. Curabitur sit amet pharetra tellus, sed varius ligula.
+              Donec dictum sem at turpis sodales, vitae congue velit feugiat. Sed et sem volutpat, dapibus enim
+              laoreet lorem. Donec tristique blandit justo et commodo. Nullam sem odio, faucibus nec odio at, ultricies
+              luctus nunc. Cras dictum urna a risus semper, ac porta erat feugiat. Praesent eget mi est. Aenean tempor
+              iaculis purus ut scelerisque.
+            </p>
+          </div>
         </div>
         <div className={styles.ctaButtons}>
           {canCreateRooms && <CreateRoomButton />}
@@ -81,9 +97,6 @@ export function HomePage() {
       )}
       <section>
         <div className={styles.secondaryLinks}>
-          <a href="/link">
-            <FormattedMessage id="home.have_code" />
-          </a>
           <div>
             <IfFeature name="show_discord_bot_link">
               <FormattedMessage id="home.add_to_discord_1" />

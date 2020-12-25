@@ -5,9 +5,14 @@ import styles from "./MediaGrid.scss";
 
 export function MediaGrid({ children, className, ...rest }) {
   return (
-    <div className={classNames(styles.mediaGrid, className)} {...rest}>
-      {children}
-    </div>
+    <>
+      <h2 style={{ textAlign: "center" }}>
+        <b>⇊ ESCOLHA UMA SALA ⇊</b>
+      </h2>
+      <div className={classNames(styles.mediaGrid, className)} {...rest}>
+        {children}
+      </div>
+    </>
   );
 }
 

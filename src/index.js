@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
-import Button from "react-bootstrap/Button";
+import { Button } from "./react-components/input/Button";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ReactDOM from "react-dom";
 import { WrappedIntlProvider } from "./react-components/wrapped-intl-provider";
@@ -22,6 +22,10 @@ function Root() {
   const [showAgeRestriction, setShowAgeRestriction] = useState(true);
   const handleCloseAgeRestriction = () => setShowAgeRestriction(false);
 
+  const onModalClose = () => {
+    window.location.href = "http://coquetelmolotov.com.br/17edicao";
+  };
+
   return (
     <WrappedIntlProvider>
       <AuthContextProvider store={store}>
@@ -30,7 +34,7 @@ function Root() {
         <Modal
           className={styles.modal}
           show={showAgeRestriction}
-          onHide={handleCloseAgeRestriction}
+          onHide={onModalClose}
           backdrop="static"
           keyboard={false}
         >
