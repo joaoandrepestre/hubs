@@ -52,6 +52,8 @@ images.app_thumbnail = { category = "images", type = "file", name = "App Thumbna
 images.company_logo = { category = "images", type = "file", name = "Company Logo", description = "Company logo used across the app." }
 images.home_background = { category = "images", type = "file", name = "Home background", description = "Background image on the home page." }
 
+images.load_Logo = { category = "images", type = "file", name = "Load Logo", description = "Loading Screen Logo." }
+
 images.editor_logo = { category = "images", type = "file", internal = "true" }
 
 theme.dark-theme = { category = "theme", type = "boolean", name = "Dark Mode", description = "Use dark UI styling." }

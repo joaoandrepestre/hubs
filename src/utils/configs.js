@@ -3,6 +3,8 @@ import companyLogo from "../assets/images/company-logo.png";
 import homeHeroBackground from "../assets/images/home-hero-background-unbranded.png";
 import sceneEditorLogo from "../assets/images/editor-logo.png";
 
+import loadLogo from "../assets/images/loadlogo.png";
+
 // Read configs from global variable if available, otherwise use the process.env injected from build.
 const configs = {};
 let isAdmin = false;
@@ -69,13 +71,16 @@ configs.feature = featureName => {
   }
 };
 
-let localDevImages = {};
+let localDevImages = {
+  load_logo: loadLogo
+};
 if (isLocalDevelopment) {
   localDevImages = {
     logo: appLogo,
     company_logo: companyLogo,
     editor_logo: sceneEditorLogo,
-    home_background: homeHeroBackground
+    home_background: homeHeroBackground,
+    load_logo: loadLogo
   };
 }
 

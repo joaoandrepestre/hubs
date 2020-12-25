@@ -101,7 +101,7 @@ class Loader extends Component {
     return (
       <WrappedIntlProvider>
         <div className="loading-panel">
-          <img className="loading-panel__logo" src={configs.image("logo")} />
+          <img className="loading-panel__logo" src={configs.image("load_logo")} />
           <UnlessFeature name="hide_powered_by">
             <div className="loading-panel__powered-by">
               <span className="loading-panel__powered-by__prefix">
