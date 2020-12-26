@@ -79,16 +79,18 @@ export function HomePage() {
             <p>
               tincidunt erat mi, in pharetra massa ornare et. Curabitur sit amet pharetra tellus, sed varius ligula.
               Donec dictum sem at turpis sodales, vitae congue velit feugiat. Sed et sem volutpat, dapibus enim
-              laoreet lorem. Donec tristique blandit justo et commodo. Nullam sem odio, faucibus nec odio at, ultricies
-              luctus nunc. Cras dictum urna a risus semper, ac porta erat feugiat. Praesent eget mi est. Aenean tempor
+              tristique blandit justo et commodo. Nullam sem odio, faucibus nec odio at, ultricies luctus nunc. nunc.
+              nunc. Cras dictum urna a risus semper, ac porta erat feugiat. Praesent eget mi est. Aenean tempor iaculis
               iaculis purus ut scelerisque.
             </p>
           </div>
         </div>
-        <div className={styles.ctaButtons}>
-          {canCreateRooms && <CreateRoomButton />}
-          <PWAButton />
-        </div>
+        {canCreateRooms && (
+          <div className={styles.ctaButtons}>
+            <CreateRoomButton />
+            <PWAButton />
+          </div>
+        )}
       </section>
       {featuredRooms.length > 0 && (
         <section className={styles.featuredRooms}>

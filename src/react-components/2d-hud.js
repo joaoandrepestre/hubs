@@ -36,10 +36,10 @@ import MicOff7 from "../assets/images/mic-off-7.svgi";
 
 import { InlineSVG } from "./svgi";
 
-const MIC_ICONS = {
-  on: [Mic0, Mic1, Mic2, Mic3, Mic4, Mic5, Mic6, Mic7],
-  off: [MicOff0, MicOff1, MicOff2, MicOff3, MicOff4, MicOff5, MicOff6, MicOff7]
-};
+  const MIC_ICONS = {
+    on: [Mic0, Mic1, Mic2, Mic3, Mic4, Mic5, Mic6, Mic7],
+    off: [MicOff0, MicOff1, MicOff2, MicOff3, MicOff4, MicOff5, MicOff6, MicOff7]
+  };
 
 const noop = () => {};
 
@@ -267,8 +267,6 @@ class TopHUD extends Component {
       tip = tipDivForType(this.props.activeTip);
     }
 
-    const micLevel = this.state.micLevel;
-    const micIcon = MIC_ICONS[this.props.muted ? "off" : "on"][micLevel];
     // Hide buttons when frozen.
     return (
       <div className={cx(styles.container, styles.top, styles.unselectable, uiStyles.uiInteractive)}>
@@ -277,15 +275,6 @@ class TopHUD extends Component {
         ) : (
           <div className={cx(uiStyles.uiInteractive, styles.panel)}>
             {tip}
-            {videoSharingButtons}
-            <div
-              className={cx(styles.iconButton)}
-              title={this.props.muted ? "Unmute Mic" : "Mute Mic"}
-              role="button"
-              onClick={this.props.onToggleMute}
-            >
-              <InlineSVG className={cx(styles.iconButtonIcon)} src={micIcon} />
-            </div>
             <div
               className={cx(styles.iconButton, {
                 [styles.disabled]: this.state.mediaDisabled

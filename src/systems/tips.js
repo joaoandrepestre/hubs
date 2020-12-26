@@ -316,7 +316,8 @@ const VALIDATORS = {
     return scene.is("frozen") ? VALID : INVALID;
   },
   video_share_mode: function(userinput, scene) {
-    return scene.is("sharing_video") ? VALID : INVALID;
+    //return scene.is("sharing_video") ? VALID : INVALID;
+    return INVALID;
   },
   mute_mode: function(userinput, scene) {
     //return scene.is("muted") ? VALID : INVALID;
