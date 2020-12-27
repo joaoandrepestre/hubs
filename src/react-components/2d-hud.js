@@ -8,7 +8,7 @@ import { FormattedMessage } from "react-intl";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons/faTimes";
 import { micLevelForVolume } from "../components/audio-feedback";
-import SpawnIcon from "../assets/images/spawn.svgi";
+//import SpawnIcon from "../assets/images/spawn.svgi";
 import ShareScreenIconActive from "../assets/images/share_screen_active.svgi";
 import ShareScreenIcon from "../assets/images/share_screen.svgi";
 import ShareCameraIconActive from "../assets/images/share_camera_active.svgi";
@@ -17,7 +17,7 @@ import PenIcon from "../assets/images/pen.svgi";
 import PenIconActive from "../assets/images/pen_active.svgi";
 import CameraIcon from "../assets/images/camera.svgi";
 import CameraIconActive from "../assets/images/camera_active.svgi";
-import Mic0 from "../assets/images/mic-0.svgi";
+/* import Mic0 from "../assets/images/mic-0.svgi";
 import Mic1 from "../assets/images/mic-1.svgi";
 import Mic2 from "../assets/images/mic-2.svgi";
 import Mic3 from "../assets/images/mic-3.svgi";
@@ -32,14 +32,14 @@ import MicOff3 from "../assets/images/mic-off-3.svgi";
 import MicOff4 from "../assets/images/mic-off-4.svgi";
 import MicOff5 from "../assets/images/mic-off-5.svgi";
 import MicOff6 from "../assets/images/mic-off-6.svgi";
-import MicOff7 from "../assets/images/mic-off-7.svgi";
+import MicOff7 from "../assets/images/mic-off-7.svgi"; */
 
 import { InlineSVG } from "./svgi";
 
-  const MIC_ICONS = {
+/* const MIC_ICONS = {
     on: [Mic0, Mic1, Mic2, Mic3, Mic4, Mic5, Mic6, Mic7],
     off: [MicOff0, MicOff1, MicOff2, MicOff3, MicOff4, MicOff5, MicOff6, MicOff7]
-  };
+  }; */
 
 const noop = () => {};
 
@@ -227,7 +227,7 @@ class TopHUD extends Component {
   };
 
   render() {
-    const videoSharingButtons = this.buildVideoSharingButtons();
+    //const videoSharingButtons = this.buildVideoSharingButtons();
     const isMobile = AFRAME.utils.device.isMobile();
     const tipDivForType = (type, cancelFunc) => (
       <div className={cx(styles.topTip)}>
@@ -275,18 +275,6 @@ class TopHUD extends Component {
         ) : (
           <div className={cx(uiStyles.uiInteractive, styles.panel)}>
             {tip}
-            <div
-              className={cx(styles.iconButton, {
-                [styles.disabled]: this.state.mediaDisabled
-              })}
-              title={`Create${this.state.mediaDisabled ? " Disabled" : ""}`}
-              role="button"
-              onClick={
-                this.state.mediaDisabled ? noop : () => this.props.mediaSearchStore.sourceNavigateToDefaultSource()
-              }
-            >
-              <InlineSVG className={cx(styles.iconButtonIcon, styles.spawn)} src={SpawnIcon} />
-            </div>
             <div
               className={cx(styles.iconButton, {
                 [styles.disabled]: this.state.penDisabled

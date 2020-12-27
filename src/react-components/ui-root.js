@@ -558,9 +558,9 @@ class UIRoot extends Component {
   performDirectEntryFlow = async enterInVR => {
     this.setState({ enterInVR, waitingOnAudio: true });
 
-    //const hasGrantedMic = (await grantedMicLabels()).length > 0;
+    const hasGrantedMic = (await grantedMicLabels()).length > 0;
     // set granted mic to constant false
-    const hasGrantedMic = false;
+    //const hasGrantedMic = false;
 
     if (hasGrantedMic) {
       await this.setMediaStreamToDefault();
@@ -568,7 +568,8 @@ class UIRoot extends Component {
     } else {
       //this.pushHistoryState("entry_step", "mic_grant");
       // push history to skip mic permission request
-      this.pushHistoryState("entry_step", "audio");
+      //this.pushHistoryState("entry_step", "audio");
+      await this.onMicGrantButton();
     }
 
     this.setState({ waitingOnAudio: false });
