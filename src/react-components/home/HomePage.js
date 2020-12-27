@@ -70,18 +70,19 @@ export function HomePage() {
           )}
           <div className={styles.appDescription}>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tellus ipsum, dignissim vel luctus at,
-              feugiat quis nulla. Praesent mollis purus tortor, at aliquet velit elementum id. Proin ac mauris elit. In
-              pharetra orci augue, sed sagittis leo aliquet eget. Mauris condimentum massa ex, ornare pellentesque magna
-              scelerisque ultricies. Duis risus nulla, efficitur et eros at, viverra consequat justo. Nunc ut enim
-              laoreet, accumsan dolor sit amet, posuere nisi. Nam venenatis ipsum nec lectus vulputate ullamcorper.
+              Seja bem-vinde à página inicial do Universo 3D do Coquetel Molotov.exe. Logo abaixo, você pode escolher a
+              sala que deseja entrar - todas elas são idênticas, porém com um limite de acessos simultâneos, então
+              combine com seu grupo de amigues de entrar na mesma sala :)
             </p>
             <p>
-              tincidunt erat mi, in pharetra massa ornare et. Curabitur sit amet pharetra tellus, sed varius ligula.
-              Donec dictum sem at turpis sodales, vitae congue velit feugiat. Sed et sem volutpat, dapibus enim
-              tristique blandit justo et commodo. Nullam sem odio, faucibus nec odio at, ultricies luctus nunc. nunc.
-              nunc. Cras dictum urna a risus semper, ac porta erat feugiat. Praesent eget mi est. Aenean tempor iaculis
-              iaculis purus ut scelerisque.
+              O universo foi criado especialmente para o festival e funciona como um jogo. Após escolher um avatar, você
+              poderá andar por um espaço 3D renderizado em tempo real, ouvir músicas, ver vídeos, imagens e interagir
+              com outros usuários diretamente do seu navegador. Recomendamos que use um computador com boa capacidade de
+              processamento para uma experiência fluida.
+            </p>
+            <p>
+              O espaço foi projetado e desenvolvido pela ROSABEGE (Niterói, RJ) - grupo de artistas multimídia - em
+              parceria com o Coquetel Molotov.
             </p>
           </div>
         </div>
