@@ -56,6 +56,9 @@ export function HomePage() {
     [styles.centerLogo]: !showDescription
   });
 
+  const appPresentation = configs.translations("app-presentation");
+  const paragraphs = appPresentation.split("  ");
+
   return (
     <Page className={styles.homePage} style={pageStyle}>
       <section>
@@ -69,21 +72,9 @@ export function HomePage() {
             </div>
           )}
           <div className={styles.appDescription}>
-            <p>
-              Seja bem-vinde à página inicial do Universo 3D do Coquetel Molotov.exe. Logo abaixo, você pode escolher a
-              sala que deseja entrar - todas elas são idênticas, porém com um limite de acessos simultâneos, então
-              combine com seu grupo de amigues de entrar na mesma sala :)
-            </p>
-            <p>
-              O universo foi criado especialmente para o festival e funciona como um jogo. Após escolher um avatar, você
-              poderá andar por um espaço 3D renderizado em tempo real, ouvir músicas, ver vídeos, imagens e interagir
-              com outros usuários diretamente do seu navegador. Recomendamos que use um computador com boa capacidade de
-              processamento para uma experiência fluida.
-            </p>
-            <p>
-              O espaço foi projetado e desenvolvido pela ROSABEGE (Niterói, RJ) - grupo de artistas multimídia - em
-              parceria com o Coquetel Molotov.
-            </p>
+            {paragraphs.map((value, index, array) => {
+              return <p key={index}>{value}</p>;
+            })}
           </div>
         </div>
         {canCreateRooms && (

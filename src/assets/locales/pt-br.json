@@ -6,6 +6,7 @@
   "share-hashtag": "#app",
   "app-description": "Compartilhe uma sala virtual com seus amigos. \nVeja vídeos, brinque com objetos 3D, ou simplesmente relaxe.",
   "app-tagline": "VR particular e social no seu navegador",
+  "app-presentation": "Apresente o app",
   "auth.verified-title": "E-mail verificado!",
   "auth.verify-failed": "Não foi possível entrar com esse link. Ele pode já ter sido usado ou expirado.",
   "auth.verified": "Seu e-mail foi verificado!\nVocê pode fechar essa aba e voltar para o %app-name%.",

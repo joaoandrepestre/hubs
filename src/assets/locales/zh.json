@@ -6,6 +6,7 @@
   "share-hashtag": "#app",
   "app-description": "与朋友一起分享虚拟房间。\n看视频，体验3D效果，或是跟朋友一起玩耍。",
   "app-tagline": "在你浏览器里的私人社交VR（虚拟现实）",
+  "app-presentation": "Present your app",
   "auth.verified-title": "邮箱确认！",
   "auth.verify-failed": ".无法通过此链接登录，链接可能已经使用过或是已过期",
   "auth.verified": "你的邮箱已被确认!\n你可以关闭浏览器网页，回到%app-name%。",

@@ -50,6 +50,10 @@ if (window.APP_CONFIG) {
     document.head.insertBefore(style, document.head.firstChild);
   }
 
+  if (!configs.APP_CONFIG.translations) {
+    configs.APP_CONFIG.translations = {};
+  }
+
   if (!configs.APP_CONFIG.features) {
     configs.APP_CONFIG.features = {};
   }
@@ -60,6 +64,28 @@ if (window.APP_CONFIG) {
 }
 
 const isLocalDevelopment = process.env.NODE_ENV === "development";
+
+let localDevTranslations = {};
+if (isLocalDevelopment) {
+  localDevTranslations = {
+    "app-presentation": "App presentation"
+  };
+}
+
+configs.translations = translationName => {
+  const value =
+    (configs.APP_CONFIG &&
+      configs.APP_CONFIG.translations &&
+      configs.APP_CONFIG.translations.en &&
+      configs.APP_CONFIG.translations.en[translationName]) ||
+    localDevTranslations[translationName];
+  if (typeof value === "boolean" || translationName === "app-name") {
+    const forceAppName = translationName === "app-name" && isAdmin;
+    return forceAppName || value;
+  } else {
+    return value;
+  }
+};
 
 configs.feature = featureName => {
   const value = configs.APP_CONFIG && configs.APP_CONFIG.features && configs.APP_CONFIG.features[featureName];
