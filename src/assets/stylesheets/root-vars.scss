@@ -52,7 +52,7 @@
   --panel-background-color: #{$white-transparent};
   --panel-text-color: black;
   --panel-overlay-text-color: black;
-  --panel-overlay-background-color: rgba(0,0,0,0.85);
+  --panel-overlay-background-color: rgba(0, 0, 0, 0.85);
   --overlay-button-background-color: white;
   --overlay-button-icon-color: #{$darkest-grey}; // favorite button
   --action-button-secondary-icon: #{$dark-grey}; // eg avatar upload button
@@ -117,7 +117,7 @@
   --tile-button-background-color: #ffffffde;
   --tile-inset-text: #{$dark-grey-text};
   --tile-selected-color: #eaeaea;
-  --tile-title-color: black;
+  --tile-title-color: white;
   --tile-subtitle-color: #{$dark-grey-text};
   --tile-subtitle-link-color: #{$dark-grey};
   --tile-subtext-color: #{$grey-text};
@@ -142,7 +142,7 @@
   --panel-background-color: #{$darkest-grey-transparent};
   --panel-text-color: #{$off-white};
   --panel-overlay-text-color: black;
-  --panel-overlay-background-color: rgba(0,0,0,0.85);
+  --panel-overlay-background-color: rgba(0, 0, 0, 0.85);
   --overlay-button-background-color: rgba(50, 50, 50, 0.95);
   --overlay-button-icon-color: #{$light-grey}; // favorite button
   --unfavorited-color: #{$dark-grey};
