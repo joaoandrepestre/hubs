@@ -158,7 +158,7 @@ const VALIDATORS = {
       userinput.activeSets.includes(sets.leftCursorHoldingPen)
     )
       return INVALID;
-    if (mediaCounter.count() === 0) return VALID;
+    if (mediaCounter.count() === 0) return INVALID;
     return FINISH;
   },
   freeze_gesture: function(userinput, scene, mediaCounter) {
