@@ -3,6 +3,8 @@
 translations.en."app-name" = { category = "translations", type = "string", name = "App Name", description = "Name used across the app." }
 translations.en."app-description" = { category = "translations", type = "string", name = "App Description", description = "App description used across the app." }
 translations.en."app-presentation" = { category = "translations", type = "string", name = "App Presenation", description = "App presentation for the homepage." }
+translations.en."presentation-video-url" = { category = "translations", type = "string", name = "Presenation video URL", description = "URL for the video presentation on youtube." }
+translations.en."app-credits" = { category = "translations", type = "string", name = "App Credits", description = "Credits for the people involved in the project." }
 translations.en."app-tagline" = { category = "translations", type = "string", name = "App Tagline", description = "A shorter app description used across the app." }
 translations.en."company-name" = { category = "translations", type = "string", name = "Company Name", description = "Company name used across the app." }
 translations.en."share-hashtag" = { category = "translations", type = "string", name = "Share Hashtag", description = "Hashtag used in share messages." }
