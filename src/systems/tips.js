@@ -231,7 +231,7 @@ const VALIDATORS = {
     if (!scene.is("frozen")) return INVALID;
     if (mediaCounter.count() === 0) return INVALID;
     if (store && store.state.activity.hasPinned) return FINISH;
-    return VALID;
+    return INVALID;
   },
   object_zoom: function(userinput, scene) {
     if (scene.is("frozen")) return INVALID;
