@@ -543,7 +543,7 @@ const DEFINITIONS = new Map([
         max: 2,
         step: 0.1,
         digits: 1,
-        defaultNumber: 1
+        defaultNumber: 2
       }
     ]
   ],
