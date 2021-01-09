@@ -7,6 +7,8 @@
   "app-description": "友達とバーチャルルームを共有しましょう。\n ビデオを見たり,3Dオブジェクトで遊んだり,自由に過ごすことができます。",
   "app-tagline": "ウェブブラウザのプライベートソーシャルVR",
   "app-presentation": "Present your app",
+  "presentation-video-url": "https://www.youtube.com/watch?v=mpQi11QuFWs",
+  "app-credits": "Credits for the people involved",
   "auth.verified-title": "Email Verified！",
   "auth.verify-failed": "このリンクでサインインできません。すでに使用されているか,有効期限が切れている可能性があります。",
   "auth.verified": "メールが確認されました！\n これで,このブラウザタブを閉じて,％app-name％に戻ることができます。",

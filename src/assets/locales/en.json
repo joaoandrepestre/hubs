@@ -7,6 +7,8 @@
   "app-description": "Share a virtual room with friends.\nWatch videos, play with 3D objects, or just hang out.",
   "app-tagline": "Private social VR in your web browser",
   "app-presentation": "Present your app",
+  "presentation-video-url": "https://www.youtube.com/watch?v=mpQi11QuFWs",
+  "app-credits": "Credits for the people involved",
   "auth.verified-title": "Email Verified!",
   "auth.verify-failed": "Unable to sign in with this link. It may have already been used or has expired.",
   "auth.verified": "Your email has been verified!\nYou can now close this browser tab and return to %app-name%.",
