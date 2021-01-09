@@ -65,10 +65,15 @@ if (window.APP_CONFIG) {
 
 const isLocalDevelopment = process.env.NODE_ENV === "development";
 
-let localDevTranslations = {};
+let localDevTranslations = {
+  "presentation-video-url": "https://www.youtube.com/watch?v=mpQi11QuFWs",
+  "app-credits": "App  credits"
+};
 if (isLocalDevelopment) {
   localDevTranslations = {
-    "app-presentation": "App presentation"
+    "app-presentation": "App presentation",
+    "presentation-video-url": "https://www.youtube.com/watch?v=mpQi11QuFWs",
+    "app-credits": "App  credits"
   };
 }
 

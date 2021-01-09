@@ -56,8 +56,55 @@ export function HomePage() {
     [styles.centerLogo]: !showDescription
   });
 
-  const appPresentation = configs.translations("app-presentation");
-  const paragraphs = appPresentation.split("  ");
+  const getFormattedText = (fieldName, split = 0) => {
+    let bold = false;
+    let italic = false;
+    let formatted = [];
+
+    const u_pres = configs.translations(fieldName);
+    const ps = u_pres.split("  ");
+    const linesPerSplit = split === 0 ? ps.length : ps.length / 2;
+    const start = split === 0 ? 0 : (split - 1) * linesPerSplit;
+    const end = start + linesPerSplit;
+
+    ps.slice(start, end).forEach(para => {
+      let formattedPara = "<p>";
+      for (const char of para) {
+        if (char === "*") {
+          if (!bold) {
+            formattedPara += "<b>";
+            bold = true;
+          } else {
+            formattedPara += "</b>";
+            bold = false;
+          }
+        } else if (char === "_") {
+          if (!italic) {
+            formattedPara += "<i>";
+            italic = true;
+          } else {
+            formattedPara += "</i>";
+            italic = false;
+          }
+        } else {
+          formattedPara += char;
+        }
+      }
+      formattedPara += "</p>";
+      formatted.push(formattedPara);
+    });
+
+    return formatted.reduce((paras, para) => {
+      return paras + para;
+    });
+  };
+
+  const getEmbedYoutubeURL = () => {
+    const url = configs.translations("presentation-video-url");
+    const vid = url.split("?v=")[1];
+
+    return "https://www.youtube.com/embed/" + vid;
+  };
 
   return (
     <Page className={styles.homePage} style={pageStyle}>
@@ -71,10 +118,23 @@ export function HomePage() {
               <FormattedMessage id="app-description" />
             </div>
           )}
-          <div className={styles.appDescription}>
-            {paragraphs.map((value, index, array) => {
+          <div>
+            <iframe
+              width="560"
+              height="315"
+              src={getEmbedYoutubeURL()}
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+          <div
+            className={styles.appDescription}
+            dangerouslySetInnerHTML={{ __html: getFormattedText("app-presentation") }}
+          >
+            {/* {paragraphs.map((value, index, array) => {
               return <p key={index}>{value}</p>;
-            })}
+            })} */}
           </div>
         </div>
         {canCreateRooms && (
@@ -87,9 +147,19 @@ export function HomePage() {
       {featuredRooms.length > 0 && (
         <section className={styles.featuredRooms}>
           <MediaGrid>{featuredRooms.map(room => <RoomTile key={room.id} room={room} />)}</MediaGrid>
+          <hr color="white" />
+          <br />
         </section>
       )}
       <section>
+        <div
+          className={styles.appCreditsLeft}
+          dangerouslySetInnerHTML={{ __html: getFormattedText("app-credits", 1) }}
+        />
+        <div
+          className={styles.appCreditsRight}
+          dangerouslySetInnerHTML={{ __html: getFormattedText("app-credits", 2) }}
+        />
         <div className={styles.secondaryLinks}>
           <div>
             <IfFeature name="show_discord_bot_link">

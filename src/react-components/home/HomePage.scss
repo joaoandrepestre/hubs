@@ -15,6 +15,41 @@
   margin-top: 36px;
 }
 
+:local(.app-credits-left) {
+  white-space: pre-wrap;
+  align-self: auto;
+  font-size: 11pt;
+  text-align: center;
+  margin: 0.5em 0em;
+  margin-bottom: 1em;
+  color: white;
+  float: left;
+
+
+  @media (min-width: $breakpoint-lg) {
+    align-self: flex-start;
+    text-align: left;
+    width: 50%;
+  }
+}
+
+:local(.app-credits-right) {
+  white-space: pre-wrap;
+  align-self: auto;
+  font-size: 11pt;
+  text-align: center;
+  margin: 0.5em 0;
+  margin-bottom: 1em;
+  color: white;
+  float: right;
+
+  @media (min-width: $breakpoint-lg) {
+    align-self: flex-start;
+    text-align: right;
+    width: 50%;
+  }
+}
+
 :local(.app-description) {
   white-space: pre-wrap;
   align-self: auto;
@@ -27,7 +62,7 @@
 
   @media (min-width: $breakpoint-lg) {
     align-self: flex-start;
-    text-align: start;
+    text-align: center;
   }
 }
 
