@@ -21,9 +21,11 @@ export function HomePage() {
   const { results: favoriteRooms } = useFavoriteRooms();
   const { results: publicRooms } = usePublicRooms();
 
-  const featuredRooms = Array.from(new Set([...favoriteRooms, ...publicRooms])).sort(
-    (a, b) => b.member_count - a.member_count
-  );
+  const featuredRooms = Array.from(new Set([...favoriteRooms, ...publicRooms])).sort((a, b) => {
+    if (a.name < b.name) return -1;
+    if (a.name > b.name) return 1;
+    return 0;
+  });
 
   useEffect(() => {
     const qs = new URLSearchParams(location.search);
@@ -59,13 +61,20 @@ export function HomePage() {
   const getFormattedText = (fieldName, split = 0) => {
     let bold = false;
     let italic = false;
-    let formatted = [];
+    let formatted = "";
 
     const u_pres = configs.translations(fieldName);
     const ps = u_pres.split("  ");
-    const linesPerSplit = split === 0 ? ps.length : ps.length / 2;
-    const start = split === 0 ? 0 : (split - 1) * linesPerSplit;
-    const end = start + linesPerSplit;
+    const linesPerSplit = split === 0 ? ps.length : Math.floor(ps.length / 2);
+    let start = split === 0 ? 0 : (split - 1) * linesPerSplit;
+    let end = start + linesPerSplit;
+
+    if (split != 0) {
+      if (start != 0) {
+        while (start < ps.length && !ps[start].startsWith("*")) start++;
+      }
+      while (end < ps.length && !ps[end].startsWith("*")) end++;
+    }
 
     ps.slice(start, end).forEach(para => {
       let formattedPara = "<p>";
@@ -91,12 +100,10 @@ export function HomePage() {
         }
       }
       formattedPara += "</p>";
-      formatted.push(formattedPara);
+      formatted += formattedPara;
     });
 
-    return formatted.reduce((paras, para) => {
-      return paras + para;
-    });
+    return formatted;
   };
 
   const getEmbedYoutubeURL = () => {
@@ -118,8 +125,9 @@ export function HomePage() {
               <FormattedMessage id="app-description" />
             </div>
           )}
-          <div>
+          <div className={styles.videoContainer}>
             <iframe
+              className={styles.responsiveIframe}
               width="560"
               height="315"
               src={getEmbedYoutubeURL()}
@@ -131,11 +139,7 @@ export function HomePage() {
           <div
             className={styles.appDescription}
             dangerouslySetInnerHTML={{ __html: getFormattedText("app-presentation") }}
-          >
-            {/* {paragraphs.map((value, index, array) => {
-              return <p key={index}>{value}</p>;
-            })} */}
-          </div>
+          />
         </div>
         {canCreateRooms && (
           <div className={styles.ctaButtons}>

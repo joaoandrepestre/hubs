@@ -73,7 +73,7 @@ if (isLocalDevelopment) {
   localDevTranslations = {
     "app-presentation": "App presentation",
     "presentation-video-url": "https://www.youtube.com/watch?v=mpQi11QuFWs",
-    "app-credits": "App  credits"
+    "app-credits": "*App*  credits  app  *credits*"
   };
 }
 
