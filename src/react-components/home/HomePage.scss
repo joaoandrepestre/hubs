@@ -119,6 +119,10 @@
   //background-color: var(--home-media-panel-background-color);
 }
 
+:local(.line) {
+  border-bottom: thin solid #fff;
+}
+
 :local(.secondary-links) {
   display: flex;
   flex-direction: column;

@@ -8,7 +8,11 @@
   justify-items: center;
   justify-content: space-evenly;
 
-  & > * {
+  &>* {
     margin: 8px;
   }
+}
+
+:local(.line) {
+  border-bottom: thin solid #fff;
 }

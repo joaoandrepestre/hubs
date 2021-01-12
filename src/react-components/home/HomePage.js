@@ -151,7 +151,7 @@ export function HomePage() {
       {featuredRooms.length > 0 && (
         <section className={styles.featuredRooms}>
           <MediaGrid>{featuredRooms.map(room => <RoomTile key={room.id} room={room} />)}</MediaGrid>
-          <hr color="white" />
+          <div className={styles.line} />
           <br />
         </section>
       )}

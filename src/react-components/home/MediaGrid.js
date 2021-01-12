@@ -18,7 +18,7 @@ export function MediaGrid({ children, className, ...rest }) {
       <h1 style={{ textAlign: "center", color: "white" }}>
         <b>⇊ ESCOLHA UMA SALA ⇊</b>
       </h1>
-      <hr color="white" />
+      <div className={styles.line} />
       <br />
       {big_rooms.length > 0 && (
         <div>
@@ -28,7 +28,7 @@ export function MediaGrid({ children, className, ...rest }) {
           <div className={classNames(styles.mediaGrid, className)} {...rest}>
             {big_rooms}
           </div>
-          <hr color="white" />
+          <div className={styles.line} />
           <br />
         </div>
       )}
@@ -40,7 +40,7 @@ export function MediaGrid({ children, className, ...rest }) {
           <div className={classNames(styles.mediaGrid, className)} {...rest}>
             {medium_rooms}
           </div>
-          <hr color="white" />
+          <div className={styles.line} />
           <br />
         </div>
       )}
