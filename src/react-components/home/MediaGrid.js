@@ -15,29 +15,40 @@ export function MediaGrid({ children, className, ...rest }) {
   });
   return (
     <>
-      <h2 style={{ textAlign: "center", color: "white" }}>
+      <h1 style={{ textAlign: "center", color: "white" }}>
         <b>⇊ ESCOLHA UMA SALA ⇊</b>
-      </h2>
+      </h1>
+      <hr color="white" />
       <br />
       {big_rooms.length > 0 && (
         <div>
-          <h3 style={{ textAlign: "center", color: "white" }}>SALAS até 15 PESSOAS</h3>
+          <h2 style={{ textAlign: "center", color: "white" }}>
+            <b>SALAS ATÉ 15 PESSOAS</b>
+          </h2>
           <div className={classNames(styles.mediaGrid, className)} {...rest}>
             {big_rooms}
           </div>
+          <hr color="white" />
+          <br />
         </div>
       )}
       {medium_rooms.length > 0 && (
         <div>
-          <h3 style={{ textAlign: "center", color: "white" }}>SALAS até 5 PESSOAS</h3>
+          <h2 style={{ textAlign: "center", color: "white" }}>
+            <b>SALAS ATÉ 5 PESSOAS</b>
+          </h2>
           <div className={classNames(styles.mediaGrid, className)} {...rest}>
             {medium_rooms}
           </div>
+          <hr color="white" />
+          <br />
         </div>
       )}
       {small_rooms.length > 0 && (
         <div>
-          <h3 style={{ textAlign: "center", color: "white" }}>SALAS PARTICULARES</h3>
+          <h2 style={{ textAlign: "center", color: "white" }}>
+            <b>SALAS PARTICULARES</b>
+          </h2>
           <div className={classNames(styles.mediaGrid, className)} {...rest}>
             {small_rooms}
           </div>
