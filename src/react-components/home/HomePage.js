@@ -125,6 +125,7 @@ export function HomePage() {
               <FormattedMessage id="app-description" />
             </div>
           )}
+          {configs.translations("presentation-video-url") && (
           <div className={styles.videoContainer}>
             <iframe
               className={styles.responsiveIframe}
@@ -136,6 +137,7 @@ export function HomePage() {
               allowFullScreen
             />
           </div>
+          )}
           <div
             className={styles.appDescription}
             dangerouslySetInnerHTML={{ __html: getFormattedText("app-presentation") }}
